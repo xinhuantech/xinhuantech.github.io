@@ -1,0 +1,318 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css"/>
+
+<style>
+
+.paypal-buy-now-button {
+  display: inline-flex;
+  position: relative;
+  background: #FFC439;
+  border-radius: 5px;
+  border: 1px solid #DC911D;
+  box-shadow: inset 0 1px 0 0 #FFD699;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 0 23px;
+  height: 42px;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.paypal-buy-now-button:before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  border-radius: 5px;
+  background: linear-gradient(to bottom, #FFAF00 0%, #DC911D 100%);
+  z-index: 1;
+}
+.paypal-buy-now-button:after {
+  content: "";
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #FFC439;
+  box-shadow: inset 0 1px 0 0 #FFD699;
+  z-index: 1;
+}
+.paypal-buy-now-button span {
+  padding-top: 3px;
+  padding-right: 7px;
+  text-shadow: 0 1px 0 #FFD699;
+  z-index: 2;
+}
+.paypal-buy-now-button svg {
+  filter: drop-shadow(0 1px 0 #FFFFFF);
+  z-index: 2;
+}
+    body {
+  background: #dfe9ff;
+  font-family: Lato, sans-serif;
+}
+
+nav {
+  height: 50px;
+  background: #ffffff;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  z-index: -2;
+  position: relative;
+}
+nav ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+nav ul li {
+  margin-right: 30px;
+  color: #4b71ff;
+}
+nav ul li:last-child {
+  margin-right: 0px;
+}
+nav .logo {
+  height: 50px;
+  width: 75px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  margin-right: 30px;
+  background-color: #4b71ff;
+  cursor: pointer;
+}
+nav .arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #fff;
+}
+
+.banner {
+  height: auto;
+  margin: 32px 0px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .banner {
+    height: 450px;
+    margin-bottom: 32px;
+  }
+}
+.banner .banner-image {
+  position: absolute;
+  opacity: 0.25;
+  right: 0px;
+  top: 0px;
+  height: 300px;
+  z-index: -1;
+  filter: drop-shadow(0 3rem 0.05rem #bfd8ff);
+}
+@media (min-width: 768px) {
+  .banner .banner-image {
+    display: inherit;
+    height: 400px;
+    top: 0px;
+    opacity: 0.5;
+  }
+}
+@media (min-width: 992px) {
+  .banner .banner-image {
+    height: 500px;
+    top: -50px;
+    opacity: 1;
+  }
+}
+.banner .banner-text {
+  max-width: 550px;
+  float: left;
+}
+.banner .banner-text h1 {
+  color: #00106a;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+.banner .banner-text p {
+  color: #00106a;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+.banner button {
+  border: 0;
+  border-radius: 50px;
+  padding: 0.75rem 2.75rem;
+  background: #4b71ff;
+  color: #ffffff;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  position: relative;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+.banner button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.card {
+  padding: 16px 24px;
+  background: #ffffff;
+  height: 100%;
+  position: relative;
+  border: none;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+}
+.card h3.card-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #00106a;
+}
+.card p {
+  color: #989dc5;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 72px;
+}
+.card .card-link {
+  position: absolute;
+  bottom: 18px;
+}
+.card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.card .card-icon {
+  width: 60px;
+  margin-bottom: 8px;
+  position: relative;
+  top: 0;
+  left: -12px;
+}
+
+footer {
+  background: #00106a;
+  margin: 32px 0 0px;
+  padding: 32px 0;
+}
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+footer ul li {
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+</style>
+<nav>
+    <div class="logo">
+      <div class="arrow-down"></div>
+    </div>
+    <ul>
+
+    </ul>
+  </nav>
+  <section class="banner">
+    <div class="container">
+      <div class="banner-text">
+        <h1>Xinhuan Tech</h1>
+    <h1>ξ內環tech</h1>
+        <p>我們提供任何基於 Kinect 360 相機的開發系統 從簡單的技術實施到使用 RGBD 相機操作的高要求用戶端到端界面</p>
+       
+      </div>
+    </div>
+    <img class="banner-image" src="https://preview.ibb.co/bMi5Y6/banner_img.png" alt="monitoring" >
+  </section>
+  
+  <div class="container">
+    <div class="row">
+      <div class="mb-30 col-md-6 col-lg-4">
+        <div class="card">
+        <img class="card-icon" src="https://image.ibb.co/cFV8mR/monitoring.png" alt="monitoring" >
+        <h3 class="card-title">Filter Algorithm</h3>
+        <p class="card-text">We provide algorithm for filtering any noise that decrease the accuracy of your data. With the equation of Kalman Filter we combined it with latest algorithm to support filtering data, 我們提供算法來過濾任何會降低數據準確性的噪音。 卡爾曼濾波器的方程我們結合最新的算法來支持過濾數據</p>
+        <a class="card-link" href="#">100 USD</a>
+        </div>
+      </div>
+      <div class="mb-30 col-md-6 col-lg-4">
+        <div class="card">
+        <img class="card-icon" src="https://image.ibb.co/jfmg6R/cloud_firewalls.png" alt="monitoring" >
+        <h3 class="card-title">Smoothing Algorithm</h3>
+        <p class="card-text">You can use it with device with arrays data like XBOX Kinect One, XBOX Kinect 360, and Azure Camera. Smoothing algorithm works like filtering algorithm, it will eliminate all noise data and unlock more datastream. 您可以將它與帶有陣列數據的設備一起使用，例如 XBOX Kinect One、XBOX Kinect 360 和 Azure Camera。 平滑算法的工作原理類似於過濾算法，它將消除所有噪聲數據並解鎖更多數據流</p>
+        <a class="card-link" href="#">200 USD</a>
+        </div>
+      </div>
+      <div class="mb-30 col-md-6 col-lg-4">
+        <div class="card">
+        <img class="card-icon" src="https://image.ibb.co/fcnzt6/team_management.png" alt="team management" >
+        <h3 class="card-title">Feature Extraction</h3>
+        <p class="card-text">With latest method, we can extract any usefull informationabout your device datastream. 使用最新方法，我們可以提取有關您的設備數據流的任何有用信息</p>
+        <a class="card-link" href="#">300 USD</a>
+        </div>
+      </div>
+      <div class="mb-30 col-md-12 col-lg-12">
+        <div class="card">
+        <img class="card-icon" src="https://image.ibb.co/evyiLm/backups.png" alt="monitoring" >
+        <h3 class="card-title">Payment</h3>
+        <p class="card-text">You can pay with paypal. Please send request to our admin to get licensed code to activated the script after the payment. If you getting trouble with the payment, please contact us with email : xinhuantech@gmail.com</p>
+        <p class="card-text">你可以用貝寶支付。 請向我們的管理員發送請求，以獲得許可代碼以在付款後激活腳本。 如果您遇到付款問題，請通過電子郵件與我們聯繫：xinhuantech@gmail.com</p>
+        <a href="#" class="paypal-buy-now-button">
+            <span>Buy now with</span> 
+            <svg aria-label="PayPal" xmlns="http://www.w3.org/2000/svg" width="90" height="33" viewBox="34.417 0 90 33">
+               <path fill="#253B80" d="M46.211 6.749h-6.839a.95.95 0 0 0-.939.802l-2.766 17.537a.57.57 0 0 0 .564.658h3.265a.95.95 0 0 0 .939-.803l.746-4.73a.95.95 0 0 1 .938-.803h2.165c4.505 0 7.105-2.18 7.784-6.5.306-1.89.013-3.375-.872-4.415-.972-1.142-2.696-1.746-4.985-1.746zM47 13.154c-.374 2.454-2.249 2.454-4.062 2.454h-1.032l.724-4.583a.57.57 0 0 1 .563-.481h.473c1.235 0 2.4 0 3.002.704.359.42.469 1.044.332 1.906zM66.654 13.075h-3.275a.57.57 0 0 0-.563.481l-.146.916-.229-.332c-.709-1.029-2.29-1.373-3.868-1.373-3.619 0-6.71 2.741-7.312 6.586-.313 1.918.132 3.752 1.22 5.03.998 1.177 2.426 1.666 4.125 1.666 2.916 0 4.533-1.875 4.533-1.875l-.146.91a.57.57 0 0 0 .562.66h2.95a.95.95 0 0 0 .939-.804l1.77-11.208a.566.566 0 0 0-.56-.657zm-4.565 6.374c-.316 1.871-1.801 3.127-3.695 3.127-.951 0-1.711-.305-2.199-.883-.484-.574-.668-1.392-.514-2.301.295-1.855 1.805-3.152 3.67-3.152.93 0 1.686.309 2.184.892.499.589.697 1.411.554 2.317zM84.096 13.075h-3.291a.955.955 0 0 0-.787.417l-4.539 6.686-1.924-6.425a.953.953 0 0 0-.912-.678H69.41a.57.57 0 0 0-.541.754l3.625 10.638-3.408 4.811a.57.57 0 0 0 .465.9h3.287a.949.949 0 0 0 .781-.408l10.946-15.8a.57.57 0 0 0-.469-.895z"></path>
+               <path fill="#179BD7" d="M94.992 6.749h-6.84a.95.95 0 0 0-.938.802l-2.767 17.537a.57.57 0 0 0 .563.658h3.51a.665.665 0 0 0 .656-.563l.785-4.971a.95.95 0 0 1 .938-.803h2.164c4.506 0 7.105-2.18 7.785-6.5.307-1.89.012-3.375-.873-4.415-.971-1.141-2.694-1.745-4.983-1.745zm.789 6.405c-.373 2.454-2.248 2.454-4.063 2.454h-1.031l.726-4.583a.567.567 0 0 1 .562-.481h.474c1.233 0 2.399 0 3.002.704.358.42.467 1.044.33 1.906zM115.434 13.075h-3.272a.566.566 0 0 0-.562.481l-.146.916-.229-.332c-.709-1.029-2.289-1.373-3.867-1.373-3.619 0-6.709 2.741-7.312 6.586-.312 1.918.131 3.752 1.22 5.03 1 1.177 2.426 1.666 4.125 1.666 2.916 0 4.532-1.875 4.532-1.875l-.146.91a.57.57 0 0 0 .563.66h2.949a.95.95 0 0 0 .938-.804l1.771-11.208a.57.57 0 0 0-.564-.657zm-4.565 6.374c-.314 1.871-1.801 3.127-3.695 3.127-.949 0-1.711-.305-2.199-.883-.483-.574-.666-1.392-.514-2.301.297-1.855 1.805-3.152 3.67-3.152.93 0 1.686.309 2.184.892.501.589.699 1.411.554 2.317zM119.295 7.23l-2.807 17.858a.569.569 0 0 0 .562.658h2.822c.469 0 .866-.34.938-.803l2.769-17.536a.57.57 0 0 0-.562-.659h-3.16a.571.571 0 0 0-.562.482z"></path>
+            </svg>
+         </a>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul>
+          <li>Our Documentation on Smoothing Algorithm Kinect</li>
+          <li><iframe width="560" height="315" src="https://www.youtube.com/embed/tP2ab08UpVA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+          <li><iframe width="560" height="315" src="https://www.youtube.com/embed/d8BflpjcPe4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+          <li><iframe width="560" height="315" src="https://www.youtube.com/embed/PBsaK0t3mqQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+        </ul>
+      </div>
+     
+    </div>
+    </div>
+  </footer>
